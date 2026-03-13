@@ -103,7 +103,7 @@ class Task(models.Model):
 
     class Meta:
         db_table = "tasks"
-        ordering = ['-created_at', "assignee"]
+        ordering = ['-due_date', "assignee"]
         verbose_name = "task"
         verbose_name_plural = "tasks"
         unique_together = ("name", "project")
