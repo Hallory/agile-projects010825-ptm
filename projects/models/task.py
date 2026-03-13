@@ -99,3 +99,11 @@ class Task(models.Model):
         blank=True,
         null=True
     )
+
+
+    class Meta:
+        db_table = "tasks"
+        ordering = ['-due_date', "assignee"]
+        verbose_name = "task"
+        verbose_name_plural = "tasks"
+        unique_together = ("name", "project")
