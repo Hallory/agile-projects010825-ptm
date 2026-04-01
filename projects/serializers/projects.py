@@ -11,3 +11,12 @@ class ProjectListSerializer(serializers.ModelSerializer):
             "name",
             "created_at"
         ]
+
+
+class ProjectCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Project
+        fields = [
+            "name",
+            "description"
+        ]

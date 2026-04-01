@@ -7,7 +7,11 @@ from projects.models import Task
 from projects.serializers.tasks import TaskListSerializer
 
 
-@api_view(['GET',])
+@api_view(
+    [
+        "GET",
+    ]
+)
 def get_all_tasks(request: Request) -> Response:
     all_tasks = Task.objects.all()
 
@@ -19,7 +23,4 @@ def get_all_tasks(request: Request) -> Response:
 
     serialized_data = TaskListSerializer(all_tasks, many=True)
 
-    return Response(
-        data=serialized_data.data,
-        status=status.HTTP_200_OK
-    )
+    return Response(data=serialized_data.data, status=status.HTTP_200_OK)
