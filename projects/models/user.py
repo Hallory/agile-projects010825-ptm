@@ -47,6 +47,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         null=True,
         blank=True
     )
+    deleted_at = models.DateTimeField(null=True, blank=True)
 
     objects = UserManager()
 
